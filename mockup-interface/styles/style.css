@@ -1,0 +1,86 @@
+body {
+  padding-bottom: 70px;
+  position: relative;
+  min-height: 100vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /*box-shadow: 0 -2px 2px #333333;*/
+}
+
+footer > div {
+  color: white;
+  padding: 1em 0;
+  background-color: #333333;
+}
+
+footer a {
+  color: white;
+  padding: 0 0.2em;
+}
+
+#toc-sidebar {
+  padding-left: 20px;
+}
+
+#toc-sidebar.affix {
+  position: fixed;
+  top: 20px;
+}
+
+#toc-sidebar .nav>li {
+  position: relative;
+  display: block;
+}
+
+#toc-sidebar .nav>li#toc-header {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#toc-sidebar .nav>li>a {
+  display: block;
+  padding: 4px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #aaa;
+}
+
+#toc-sidebar .nav>li>a:hover {
+  color: #333;
+  padding-left: 19px;
+  background-color: transparent;
+  text-decoration: none;
+  border-left: 1px solid #333;
+}
+
+#toc-sidebar .nav .nav>li>a {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 30px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#toc-sidebar .nav .nav>li>a:hover {
+  padding-left: 29px;
+}
+
+#toc-sidebar .nav>.active:hover>a,
+#toc-sidebar .nav>.active>a {
+  padding-left: 18px;
+  font-weight: 700;
+  color: #333;
+  background-color: transparent;
+  border-left: 2px solid #333;
+}
+
+#toc-sidebar .nav .nav>.active:hover>a,
+#toc-sidebar .nav .nav>.active>a {
+  padding-left: 28px;
+  font-weight: 500;
+}
+
