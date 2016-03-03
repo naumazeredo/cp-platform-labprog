@@ -1,5 +1,5 @@
 body {
-  padding-bottom: 70px;
+  padding-bottom: 100px;
   position: relative;
   min-height: 100vh;
 }
@@ -55,6 +55,15 @@ footer a {
   background-color: transparent;
   text-decoration: none;
   border-left: 1px solid #333;
+}
+
+#toc-sidebar .nav .nav {
+  display: none;
+  padding-bottom: 10px;
+}
+
+#toc-sidebar .nav>.active>ul {
+  display: block;
 }
 
 #toc-sidebar .nav .nav>li>a {
