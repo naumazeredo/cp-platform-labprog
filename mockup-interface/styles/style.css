@@ -8,18 +8,14 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /*box-shadow: 0 -2px 2px #333333;*/
+  border-top: 1px solid;
+  border-color: #e7e7e7;
+  background-color: #f8f8f8;
 }
 
 footer > div {
-  color: white;
+  color: black;
   padding: 1em 0;
-  background-color: #333333;
-}
-
-footer a {
-  color: white;
-  padding: 0 0.2em;
 }
 
 #toc-sidebar {
@@ -28,7 +24,7 @@ footer a {
 
 #toc-sidebar.affix {
   position: fixed;
-  top: 20px;
+  top: 70px;
 }
 
 #toc-sidebar .nav>li {
@@ -93,3 +89,30 @@ footer a {
   font-weight: 500;
 }
 
+#wrapper {
+  margin-top: 51px;
+}
+
+#sidebar-wrapper {
+  position: absolute;
+  background: #222;
+}
+
+#menu-brand {
+  background: black;
+  position: relative;
+  width: 56px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  #menu-brand {
+    width: 250px;
+  }
+}
+
+/* Bootstrap */
+.navbar-right { margin-right: 0px; }

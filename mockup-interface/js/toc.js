@@ -1,6 +1,6 @@
 $('#toc-sidebar').affix({
     offset: {
-        top: $('#toc-sidebar').offset().top
+        top: $('#toc-sidebar').offset().top-55
     }
 });
 
