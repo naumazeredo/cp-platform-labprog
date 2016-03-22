@@ -89,6 +89,12 @@ footer > div {
   font-weight: 500;
 }
 
+.anchor {
+  padding-top: 51px;
+  margin-top: -51px;
+  display: inline-block;
+}
+
 #wrapper {
   margin-top: 51px;
 }
