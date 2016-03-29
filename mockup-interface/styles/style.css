@@ -1,3 +1,7 @@
+/*******************/
+/*   Page layout   */
+/*******************/
+
 html {
   position: relative;
   min-height: 100%;
@@ -21,6 +25,46 @@ footer > div {
   color: black;
   padding: 1em 0;
 }
+
+#menu { margin-left: 56px; }
+#menu-brand {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+
+  background: black;
+  position: absolute;
+  left: 56px;
+  margin-left: -56px;
+  width: 56px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  #menu { margin-left: 250px }
+  #menu-brand {
+    left: 250px;
+    margin-left: -250px;
+    width: 250px;
+  }
+}
+
+
+/* Sidebar */
+#wrapper { margin-top: 51px; }
+#page-content-wrapper { position: relative; }
+#sidebar-wrapper { position: absolute; background: #222; top: 0; }
+.sidebar-nav { top: 51px; }
+
+/* Bootstrap Fix */
+.navbar-right { margin-right: 0px; }
+
+/*********************/
+/* Table of Contents */
+/*********************/
 
 #toc-sidebar {
   padding-left: 20px;
@@ -99,40 +143,3 @@ footer > div {
   margin-top: -51px;
   display: inline-block;
 }
-
-#menu-brand {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-
-  background: black;
-  position: absolute;
-  left: 56px;
-  margin-left: -56px;
-  width: 56px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-@media (min-width: 768px) {
-  #menu-brand {
-    left: 250px;
-    margin-left: -250px;
-    width: 250px;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar .container-fluid { margin-left: 250px }
-}
-
-/* Sidebar */
-#wrapper { margin-top: 51px; }
-#page-content-wrapper { position: relative; }
-#sidebar-wrapper { position: absolute; background: #222; top: 0; }
-.sidebar-nav { top: 51px; }
-
-/* Bootstrap */
-.navbar-right { margin-right: 0px; }
