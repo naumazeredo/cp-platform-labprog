@@ -34,7 +34,7 @@ qualquer também possa modificar conteúdo presente na interface.
 
 # Backlog
 
-- Eu usuário devo conseguir visualizar a listagem dos artigos da plataforma por categoria, sem autenticação. Uma vez que eu me interesse por um artigo, devo conseguir clicar no seu link, e o mesmo será visualizado numa nova aba com o devido suporte.
+- Eu como usuário devo conseguir visualizar a listagem dos artigos da plataforma por categoria, sem autenticação.
 - Eu como usuário devo conseguir acessar cada artigo individualmente e visualizar o conteúdo renderizado por Markdown e LaTeX.
 - Eu como usuário devo ser capaz de criar minha conta, confirmar cadastro por e-mail, acessar as configurações e editar os dados cadastrais. Devo ser capaz de me autenticar pelas contas do Google e do Facebook.
 - Eu como administrador devo ser capaz de dar permissões de administração e edição de artigos para qualquer usuário autenticado.
