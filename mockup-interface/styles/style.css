@@ -143,3 +143,20 @@ footer > div {
   margin-top: -51px;
   display: inline-block;
 }
+
+/*******************/
+/*    Anchor JS    */
+/*******************/
+
+.anchorjs-link {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  text-decoration: none;
+}
+
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+}
