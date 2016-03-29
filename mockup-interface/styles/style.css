@@ -93,24 +93,22 @@ footer > div {
   font-weight: 500;
 }
 
+/* Adjust anchors to consider fixed navbar position */
 .anchor {
   padding-top: 51px;
   margin-top: -51px;
   display: inline-block;
 }
 
-#wrapper {
-  margin-top: 51px;
-}
-
-#sidebar-wrapper {
-  position: absolute;
-  background: #222;
-}
-
 #menu-brand {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+
   background: black;
-  position: relative;
+  position: absolute;
+  left: 56px;
+  margin-left: -56px;
   width: 56px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -120,13 +118,20 @@ footer > div {
 
 @media (min-width: 768px) {
   #menu-brand {
+    left: 250px;
+    margin-left: -250px;
     width: 250px;
   }
 }
 
+@media (min-width: 768px) {
+  .navbar .container-fluid { margin-left: 250px }
+}
+
 /* Sidebar */
+#wrapper { margin-top: 51px; }
 #page-content-wrapper { position: relative; }
-#sidebar-wrapper { top: 0; }
+#sidebar-wrapper { position: absolute; background: #222; top: 0; }
 .sidebar-nav { top: 51px; }
 
 /* Bootstrap */
