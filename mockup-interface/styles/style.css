@@ -67,12 +67,8 @@ footer > div {
 /*********************/
 
 #toc-sidebar {
-  padding-left: 20px;
-}
-
-#toc-sidebar.affix {
   position: fixed;
-  top: 70px;
+  padding: 20px;
 }
 
 #toc-sidebar .nav>li {
@@ -80,7 +76,7 @@ footer > div {
   display: block;
 }
 
-#toc-sidebar .nav>li#toc-header {
+#toc-header {
   padding-top: 4px;
   padding-bottom: 4px;
 }
@@ -141,7 +137,6 @@ footer > div {
 .anchor {
   padding-top: 51px;
   margin-top: -51px;
-  display: inline-block;
 }
 
 /*******************/
