@@ -157,6 +157,5 @@ footer > div {
 }
 
 *:hover > .anchorjs-link {
-  margin-left: -1.125em !important;
   text-decoration: none;
 }
