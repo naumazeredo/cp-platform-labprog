@@ -1,10 +1,13 @@
-/*
-$('#toc-sidebar').affix({
-    offset: {
-        top: $('#toc-sidebar').offset().top-55
-    }
-});
-*/
+/************/
+/* AnchorJS */
+/************/
+
+anchors.options.placement = 'left';
+anchors.add('.anchor');
+
+/*********************/
+/* Table of Contents */
+/*********************/
 
 function createtoc() {
     var toc = $('<ul />', {'class': 'nav'});
@@ -15,7 +18,6 @@ function createtoc() {
     var h2elem, h3elem;
     $('#article h2, #article h3').each(function(index, elem) {
         if (elem.nodeName === 'H2') {
-            console.log("OK!");
             if (h2elem) {
                 if (h3elem.text()) h2elem.append(h3elem);
                 toc.append(h2elem);
@@ -35,3 +37,12 @@ function createtoc() {
 
 createtoc();
 $('body').scrollspy({ target: '#toc-sidebar' });
+
+
+/*************/
+/* Side-menu */
+/*************/
+
+$('[data-toggle="toggle"').on('click', function() {
+    $($(this).data('target')).toggleClass('toggled');
+});

@@ -56,7 +56,11 @@ footer > div {
 
 /* Sidebar */
 #wrapper { margin-top: 51px; }
+#wrapper.toggled { padding-left: 0; }
+
 #page-content-wrapper { position: relative; }
+#wrapper.toggled #page-content-wrapper { position: relative; }
+
 #sidebar-wrapper { position: absolute; background: #222; top: 0; }
 .sidebar-nav { top: 51px; }
 
