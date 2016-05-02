@@ -52,7 +52,7 @@
     <div id="wrapper">
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li><a href="/">Home</a></li>
+          <li><a href="/sophos">Home</a></li>
           <li><a href="#">Categorias</a></li>
           <li><a href="#">Artigos</a></li>
         </ul>

@@ -29,12 +29,12 @@
 
   <servlet>
     <servlet-name>Sophos Index</servlet-name>
-    <servlet-class>Home</servlet-class>
+    <servlet-class>ServletHome</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>Sophos Article</servlet-name>
-    <servlet-class>Article</servlet-class>
+    <servlet-class>ServletArticle</servlet-class>
   </servlet>
 
   <servlet-mapping>
