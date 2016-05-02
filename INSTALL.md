@@ -15,7 +15,7 @@ Copy `ROOT` to `<Tomcat install folder>/webapps`.
 Go to `bin` folder in Tomcat install location and run `./startup.sh` (on Windows
 run `startup.bat`).
 
-Now open your browser and visit the url `http://localhost:8080/sophos`.
+Now open your browser and visit the url `http://localhost:8080`.
 
 # Build
 

@@ -29,12 +29,22 @@
 
   <servlet>
     <servlet-name>Sophos Index</servlet-name>
-    <servlet-class>Template</servlet-class>
+    <servlet-class>Home</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Sophos Article</servlet-name>
+    <servlet-class>Article</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>Sophos Index</servlet-name>
     <url-pattern>/sophos</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Sophos Article</servlet-name>
+    <url-pattern>/sophos/article/*</url-pattern>
   </servlet-mapping>
 
   <!--==================-->
