@@ -35,8 +35,10 @@
           <div class="collapse navbar-collapse">
             <div class="navbar-form navbar-left">
               <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Search">
-                <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                <form action="sophos" method="GET">
+                  <input type="text" name="search" class="form-control" placeholder="Search">
+                  <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                </form>
               </div>
             </div>
             <div class="nav navbar-nav navbar-right">
@@ -52,7 +54,7 @@
     <div id="wrapper">
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li><a href="/">Home</a></li>
+          <li><a href="/sophos">Home</a></li>
           <li><a href="#">Categorias</a></li>
           <li><a href="#">Artigos</a></li>
         </ul>
@@ -62,11 +64,15 @@
       <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="page-header">
-            <h1>printf("Welcome\n") <small>// coding wiki</small></h1>
+            <% if (request.getAttribute("search") != null) { %>
+              <h1>Search: <small> <%=request.getAttribute("search")%></small></h1>
+            <% } else { %>
+              <h1>printf("Welcome\n") <small>// coding wiki</small></h1>
+            <% } %>
           </div>
           <div class="col-sm-12">
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -80,7 +86,7 @@
               </ul>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -94,7 +100,7 @@
               </ul>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -108,7 +114,7 @@
               </ul>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -122,7 +128,7 @@
               </ul>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -136,7 +142,7 @@
               </ul>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -150,7 +156,7 @@
               </ul>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4">
               <ul class="list-unstyled category-list">
                 <li>
                   <span>Categoria</span>
@@ -171,7 +177,7 @@
     <!-- Page footer -->
     <footer>
       <div class="text-center">
-        <small>&copy; &lt;insert-name&gt;</small>
+        <small>&copy; &lt;Sophos 2016&gt;</small>
       </div>
     </footer>
 

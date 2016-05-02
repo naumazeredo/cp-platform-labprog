@@ -72,7 +72,7 @@
     <!-- Page footer -->
     <footer>
       <div class="text-center">
-        <small>&copy; &lt;insert-name&gt;</small>
+        <small>&copy; &lt;Sophos 2016&gt;</small>
       </div>
     </footer>
 
