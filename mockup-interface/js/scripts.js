@@ -3,12 +3,23 @@
 /************/
 
 anchors.options.placement = 'left';
-anchors.add('.anchor');
 
-/*********************/
-/* Table of Contents */
-/*********************/
+/*******************/
+/* Article scripts */
+/*******************/
 
+/* Treat markdown rendering ids */
+function postrender() {
+    var parent;
+    $('#article h2, #article h3').each(function(index, elem) {
+        $(elem).attr('class', 'anchor');
+        if (elem.nodeName === 'H2') parent = elem.id;
+        else $(elem).attr('id', parent+'-'+elem.id);
+    });
+    anchors.add('.anchor');
+}
+
+/* Table of contents */
 function createtoc() {
     var toc = $('<ul />', {'class': 'nav'});
     toc.append($('<li />', {'id': 'toc-header', 'text': 'Table of Contents'}));
@@ -33,10 +44,9 @@ function createtoc() {
 
     if (h3elem) h2elem.append(h3elem);
     toc.append(h2elem);
-}
 
-createtoc();
-$('body').scrollspy({ target: '#toc-sidebar' });
+    $('body').scrollspy({ target: '#toc-sidebar' });
+}
 
 
 /*************/

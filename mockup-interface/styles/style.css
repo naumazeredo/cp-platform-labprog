@@ -26,7 +26,7 @@ footer > div {
   padding: 1em 0;
 }
 
-#menu { margin-left: 0px; }
+#menu { margin-left: 250px }
 
 #menu-brand {
   display: block;
@@ -35,24 +35,14 @@ footer > div {
 
   background: black;
   position: absolute;
-  left: 56px;
-  margin-left: -56px;
-  width: 56px;
+  left: 250px;
+  margin-left: -250px;
+  width: 250px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
-@media (min-width: 768px) {
-  #menu { margin-left: 250px }
-  #menu-brand {
-    left: 250px;
-    margin-left: -250px;
-    width: 250px;
-  }
-}
-
 
 /* Sidebar */
 #wrapper { margin-top: 51px; }
@@ -61,7 +51,7 @@ footer > div {
 #page-content-wrapper { position: relative; }
 #wrapper.toggled #page-content-wrapper { position: relative; }
 
-#sidebar-wrapper { position: absolute; background: #222; top: 0; }
+#sidebar-wrapper { background: #222; top: 0; }
 .sidebar-nav { top: 51px; }
 
 /* Bootstrap Fix */
