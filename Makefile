@@ -1,2 +1,2 @@
 all:
-	javac src/*.java -d classes
+	javac src/*.java -d ROOT/WEB-INF/classes

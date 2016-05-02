@@ -27,6 +27,16 @@
     Wiki-like platform for creating and sharing programming related articles
   </description>
 
+  <servlet>
+    <servlet-name>Sophos Index</servlet-name>
+    <servlet-class>Template</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Sophos Index</servlet-name>
+    <url-pattern>/sophos</url-pattern>
+  </servlet-mapping>
+
   <!--==================-->
   <!-- Servlet Template -->
   <!--==================-->
