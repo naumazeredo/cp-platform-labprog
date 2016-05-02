@@ -17,6 +17,14 @@ run `startup.bat`).
 
 Now open your browser and visit the url `http://localhost:8080/sophos`.
 
+# Build
+
+To build Servlet .java files you first need to have an environment variable
+`CLASSPATH` containing the value: `<Tomcat install folder>/lib/servlet-api.jar`.
+
+Use `make` (or build by hand) to build all source codes in `src` folder
+to `ROOT/WEB-INF/classes` folder.
+
 # Contributing
 
 Create/modify the Servlet java source files in `src` folder. Use `make` (or build by hand)
