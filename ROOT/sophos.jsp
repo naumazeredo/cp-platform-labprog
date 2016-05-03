@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Wiki de Código</title>
+    <title>Sophos - Coding Wiki</title>
 
     <!-- Bootstrap -->
     <link href="/vendor/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
         <div class="container-fluid" id="menu">
           <div class="navbar-header">
             <a class="navbar-brand" href="#" id="menu-brand" data-toggle="toggle" data-target="#wrapper">
-              <span class="fa fa-code fa-lg"></span> <span class="hidden-xs">Sophos</span>
+              <span class="fa fa-code fa-lg"></span> Sophos
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
@@ -91,6 +91,7 @@
               </div>
               <% } %>
             <% } else { %>
+            <p><abbr title="Search not found... Sorry...">Here lies the search hopes!</abbr> :'(</p>
             <% } %>
 
         </div>

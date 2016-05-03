@@ -27,7 +27,11 @@ footer > div {
   padding: 1em 0;
 }
 
-#menu { margin-left: 250px }
+#menu { margin-left: 250px; }
+
+@media (max-width: 750px) {
+  #menu { margin-left: 0; }
+}
 
 #menu-brand {
   display: block;
