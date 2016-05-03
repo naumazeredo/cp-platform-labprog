@@ -2,6 +2,9 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import sophos.*;
+import dao.*;
+
 public class ServletArticle extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
@@ -11,7 +14,15 @@ public class ServletArticle extends HttpServlet {
 
     String articleName = request.getPathInfo().substring(1); // Ignore '/'
 
-    request.setAttribute("articleName", articleName);
+    Article article = (new ArticleDAO()).getByName(articleName);
+
+    if (article == null) {
+      // TODO(naum): Redirect to error page
+      return;
+    }
+
+    request.setAttribute("name", article.getName());
+    request.setAttribute("content", article.getContent());
 
     ServletContext app = this.getServletContext();
     RequestDispatcher rd = app.getRequestDispatcher("/article.jsp");

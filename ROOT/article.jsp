@@ -87,8 +87,15 @@
     <script src="/js/scripts.js"></script>
 
     <script>
-marked('\
-# <%=request.getAttribute("articleName")%>\n\n\
+marked('<%=request.getAttribute("content")%>',
+function(err, content) {
+  $('#article').html(content);
+  postrender();
+  createtoc();
+});
+
+/*
+# Test\n\n\
 ## Section 1\n\n\
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum accumsan metus eget vulputate. Donec sodales magna sed ornare sagittis. Ut vel turpis fringilla, porttitor odio a, finibus massa. Aenean scelerisque sagittis eros, nec sollicitudin velit viverra nec. Phasellus pellentesque nulla sit amet nibh placerat dapibus ut sit amet velit. Aenean aliquet rhoncus nunc quis pellentesque. Nullam id nisl mauris. Nullam pharetra posuere turpis.\n\n\
 ### Subsection 1\n\n\
@@ -104,11 +111,8 @@ Nullam interdum pulvinar sapien, in gravida arcu consectetur ut. Sed volutpat ju
 Etiam ac luctus sem. Vivamus hendrerit fringilla turpis in pretium. Vivamus mollis justo id consequat ornare. Quisque lobortis interdum consequat. Aliquam massa arcu, condimentum eu magna quis, feugiat mollis ipsum. Suspendisse lectus leo, porttitor at vulputate a, tristique sit amet elit. Aliquam elementum ullamcorper leo quis accumsan. Donec non quam in tortor imperdiet convallis. Vivamus semper accumsan mauris quis facilisis. Fusce ut quam consectetur, viverra nisl ac, venenatis leo. In gravida lorem a arcu semper, vel ultrices sem sagittis.\nQuisque ac lectus orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse consequat convallis neque nec ultrices. In euismod nunc in rhoncus faucibus. In finibus elementum ullamcorper. Proin malesuada quam venenatis, molestie magna ac, rutrum dui. Sed pharetra at ex a gravida. Vivamus pretium risus et urna scelerisque viverra. Praesent erat leo, iaculis non posuere vitae, gravida ac ante. Nulla eros mauris, commodo eget pulvinar ut, placerat faucibus nibh. Praesent consectetur neque erat, et feugiat odio accumsan ut. Sed consectetur magna vel augue imperdiet, vel dapibus ante porta.\n\n\
 ### Subsection 3\n\n\
 Nunc purus leo, euismod nec iaculis lacinia, viverra sed sapien. Sed non tincidunt eros. Phasellus at vestibulum lacus. Aliquam non bibendum lacus, ut dictum urna. Curabitur lectus dolor, consectetur ut arcu in, dictum placerat arcu. Nulla quis quam justo. Sed laoreet elit eu dapibus ultrices.',
-function(err, content) {
-  $('#article').html(content);
-  postrender();
-  createtoc();
-});
+*/
+
     </script>
 
   </body>

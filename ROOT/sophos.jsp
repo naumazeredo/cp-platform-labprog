@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -64,111 +64,34 @@
       <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="page-header">
-            <% if (request.getAttribute("search") != null) { %>
-              <h1>Search: <small> <%=request.getAttribute("search")%></small></h1>
+            <% String searchString = (String)request.getAttribute("search"); %>
+            <% if (searchString != null) { %>
+              <h1>Search: <small> <%= searchString %></small></h1>
             <% } else { %>
               <h1>printf("Welcome\n") <small>// coding wiki</small></h1>
             <% } %>
           </div>
           <div class="col-sm-12">
 
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <ul class="list-unstyled category-list">
-                <li>
-                  <span>Categoria</span>
-                  <ul>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                    <li><a href="sophos/article/test">Artigo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+            <% ArrayList<String> categories = (ArrayList<String>)request.getAttribute("categories"); %>
+            <% ArrayList<ArrayList<String>> articles = (ArrayList<ArrayList<String>>)request.getAttribute("articles"); %>
+            <% if (categories.size() > 0) { %>
+              <% for (int i = 0; i < categories.size(); i++) { %>
+                <div class="col-sm-6 col-md-4">
+                  <ul class="list-unstyled category-list">
+                    <li>
+                      <span><%= categories.get(i) %></span>
+                      <ul>
+                        <% for (int j = 0; j < articles.get(i).size(); j++) { %>
+                        <li><a href="sophos/article/<%=articles.get(i).get(j)%>"><%=articles.get(i).get(j)%></a></li>
+                        <% } %>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <% } %>
+            <% } else { %>
+            <% } %>
 
         </div>
       </div>

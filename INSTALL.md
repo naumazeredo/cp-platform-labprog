@@ -4,6 +4,13 @@ To install Tomcat just visit http://tomcat.apache.org/ go to Downloads
 (Tomcat 8 or 9 is recommended) and download the Core Binary Distribution
 and extract to wherever you like (way too simple).
 
+# Database - MySQL
+
+MySQL access should be `root` with empty password. If you need to use other
+credentials alter _FabricaConexoes.java_.
+
+Create a database named **Sophos** and import _sophos.sql_ (`mysql -p Sophos < sophos.sql`).
+
 # Sophos platform
 
 Download this [repository](https://github.com/naumazeredo/cp-platform-proto).
