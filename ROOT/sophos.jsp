@@ -91,7 +91,7 @@
               </div>
               <% } %>
             <% } else { %>
-            <p><abbr title="Search not found... Sorry...">Here lies the search hopes!</abbr> :'(</p>
+            <p><abbr title="'<%=searchString%>' not found... Sorry...">Here lies the search hopes!</abbr> :'(</p>
             <% } %>
 
         </div>
