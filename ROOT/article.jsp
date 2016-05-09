@@ -83,7 +83,7 @@
     <script src="/vendor/bootstrap.min.js"></script>
     <script src="/vendor/anchor.min.js"></script>
     <script src="/vendor/marked.min.js"></script>
-
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
     <!-- Scripts -->
     <script src="/js/scripts.js"></script>
