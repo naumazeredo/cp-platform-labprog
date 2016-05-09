@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList,java.net.URLDecoder,sophos.Article,sophos.Category" %>
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -73,17 +73,17 @@
           </div>
           <div class="col-sm-12">
 
-            <% ArrayList<String> categories = (ArrayList<String>)request.getAttribute("categories"); %>
-            <% ArrayList<ArrayList<String>> articles = (ArrayList<ArrayList<String>>)request.getAttribute("articles"); %>
+            <% ArrayList<Category> categories = (ArrayList<Category>)request.getAttribute("categories"); %>
+            <% ArrayList<ArrayList<Article>> articles = (ArrayList<ArrayList<Article>>)request.getAttribute("articles"); %>
             <% if (categories.size() > 0) { %>
               <% for (int i = 0; i < categories.size(); i++) { %>
                 <div class="col-sm-6 col-md-4">
                   <ul class="list-unstyled category-list">
                     <li>
-                      <span><%= categories.get(i) %></span>
+                      <span><%= URLDecoder.decode(categories.get(i).getName()) %></span>
                       <ul>
                         <% for (int j = 0; j < articles.get(i).size(); j++) { %>
-                        <li><a href="sophos/article/<%=articles.get(i).get(j)%>"><%=articles.get(i).get(j)%></a></li>
+                        <li><a href="sophos/article/<%=articles.get(i).get(j).getId()%>"><%= URLDecoder.decode(articles.get(i).get(j).getName()) %></a></li>
                         <% } %>
                     </ul>
                   </li>

@@ -89,7 +89,9 @@
     <script src="/js/scripts.js"></script>
 
     <script>
-marked('# <%=request.getAttribute("name")%>\n\n<%=request.getAttribute("content")%>',
+var title = '# ' + decodeURI('<%=request.getAttribute("name")%>'.replace(/%5C/g, '%5C%5C')); // POG: to use the string in another function we have to escape the escape character...
+var content = decodeURI('<%=request.getAttribute("content")%>'.replace(/%5C/g, '%5C%5C'));
+marked(title + '\n\n' + content,
 function(err, content) {
   $('#article').html(content);
   postrender();

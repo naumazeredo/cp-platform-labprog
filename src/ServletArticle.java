@@ -12,9 +12,9 @@ public class ServletArticle extends HttpServlet {
 
     PrintWriter out = response.getWriter();
 
-    String articleName = request.getPathInfo().substring(1); // Ignore '/'
+    int articleId = Integer.parseInt(request.getPathInfo().substring(1)); // Ignore '/'
 
-    Article article = (new ArticleDAO()).getByName(articleName);
+    Article article = (new ArticleDAO()).getById(articleId);
 
     if (article == null) {
       // TODO(naum): Redirect to error page

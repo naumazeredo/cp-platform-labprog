@@ -63,6 +63,25 @@ public class ArticleDAO {
     }
   }
 
+  public Article getById(int id) {
+    try (PreparedStatement stmt = connec.prepareStatement("select id,name,content from article where id=?")) {
+      stmt.setInt(1, id);
+
+      ResultSet rs = stmt.executeQuery();
+      if (rs.next()) {
+        Article a = new Article();
+        a.setId(rs.getInt("id"));
+        a.setName(rs.getString("name"));
+        a.setContent(rs.getString("content"));
+        return a;
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+
+    return null;
+  }
+
   public Article getByName(String name) {
     try (PreparedStatement stmt = connec.prepareStatement("select id,name,content from article where name=?")) {
       stmt.setString(1, name);
