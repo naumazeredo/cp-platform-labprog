@@ -35,8 +35,10 @@
           <div class="collapse navbar-collapse">
             <div class="navbar-form navbar-left">
               <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Search">
-                <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                <form action="sophos" method="GET">
+                  <input type="text" name="search" class="form-control" placeholder="Search">
+                  <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                </form>
               </div>
             </div>
             <div class="nav navbar-nav navbar-right">
