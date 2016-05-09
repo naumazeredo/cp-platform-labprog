@@ -35,7 +35,7 @@
           <div class="collapse navbar-collapse">
             <div class="navbar-form navbar-left">
               <div class="form-group has-feedback">
-                <form action="sophos" method="GET">
+                <form action="/sophos" method="GET">
                   <input type="text" name="search" class="form-control" placeholder="Search">
                   <i class="form-control-feedback glyphicon glyphicon-search"></i>
                 </form>
@@ -109,6 +109,7 @@
     <script src="/vendor/jquery-2.1.3.min.js"></script>
     <script src="/vendor/bootstrap.min.js"></script>
     <script src="/vendor/anchor.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
     <!-- Scripts -->
     <script src="/js/scripts.js"></script>
