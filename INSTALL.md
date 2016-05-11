@@ -9,7 +9,7 @@ and extract to wherever you like (way too simple).
 MySQL access should be `root` with empty password. If you need to use other
 credentials alter _FabricaConexoes.java_.
 
-Create a database named **Sophos** and import _sophos.sql_ (`mysql -p Sophos < sophos.sql`).
+Create a database named **sophos** and import _sophos.sql_ (`mysql -p sophos < sophos.sql`).
 
 # Sophos platform
 

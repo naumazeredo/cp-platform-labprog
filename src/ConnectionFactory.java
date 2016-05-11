@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class ConnectionFactory {
   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-  static final String DB_URL = "jdbc:mysql://localhost:3306/Sophos";
+  static final String DB_URL = "jdbc:mysql://localhost:3306/sophos";
 
   static final String USER = "root";
   static final String PASS = "";

@@ -30,7 +30,7 @@ CREATE TABLE `article` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `article_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `article` (
 
 LOCK TABLES `article` WRITE;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
+INSERT INTO `article` VALUES (1,'Test','## Section 1\\n\\nThis is a _test_. Everything should be **fine** ~I hope~.\\n\\n### Subsection 1.1\\n\\n> This will be great\\n> At least that\\\'s the expected\\n> And it might even be useful\\n\\n## Section 2\\n\\n- Not so hard\\n- to do something\\n- useful',1),(12,'%5C(%5CLaTeX%5C)%20test','##%20%5C(%5CLaTeX%5C)%20test%0A%0A%20nice%20and%20great%20equation%20is%20$$%20y%20=%20x%20+%202%5E%7Bx%7D%20$$%20You%20could%20also%20do%20this%20inline%20like%20this:%20%5C(y%20=%20x%20+%202%5E%7Bx%7D%5C)%0A',4);
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-03  0:11:06
+-- Dump completed on 2016-05-11 11:52:38
