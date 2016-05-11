@@ -72,7 +72,7 @@ function createtoc() {
 /* Move to top of the page */
 $(document).scroll(function() {
     var y = $(this).scrollTop();
-    if (y > 51) $('#move-top').fadeIn();
+    if (y > 80) $('#move-top').fadeIn();
     else $('#move-top').fadeOut();
 
     var winBot = y + $(window).height();
