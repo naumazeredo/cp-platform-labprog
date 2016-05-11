@@ -22,6 +22,8 @@
       </div>
     </div>
 
+    <div id="move-top"><span class="fa fa-arrow-up fa-lg"></span></div>
+
     <!-- Page footer -->
     <%@ include file="/common/footer.html" %>
 

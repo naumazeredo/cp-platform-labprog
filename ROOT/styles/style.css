@@ -55,6 +55,30 @@ footer > div {
   top: -2px;
 }
 
+#move-top {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 80px;
+}
+
+#move-top span {
+  color: white;
+  background-color: black;
+  padding: 14px;
+  opacity: 0.1;
+
+  border-radius: 4px 4px 0 0;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#move-top span:hover { opacity: 0.4; }
+
 /* Sidebar */
 #wrapper { margin-top: 51px; }
 #wrapper.toggled { padding-left: 0; }
@@ -68,7 +92,7 @@ footer > div {
 #sidebar-toggle {
   z-index: 1000;
   opacity: 0.2;
-  position: absolute;
+  position: fixed;
   top: 55px;
   left: 4px;
 

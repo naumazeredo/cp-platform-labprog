@@ -69,6 +69,25 @@ function createtoc() {
     $('body').scrollspy({ target: '#toc-sidebar' });
 }
 
+/* Move to top of the page */
+$(document).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 51) $('#move-top').fadeIn();
+    else $('#move-top').fadeOut();
+
+    var winBot = y + $(window).height();
+    var footerTop = $(document).height() - $('footer').height();
+    if (winBot > footerTop) {
+        $('#move-top').css('bottom', winBot - footerTop);
+    } else {
+        $('#move-top').css('bottom', 0);
+    }
+});
+
+$('#move-top').on('click', function() {
+    $('html,body').animate({ scrollTop: 0 }, 'fast');
+});
+
 
 /*************/
 /* Side-menu */
