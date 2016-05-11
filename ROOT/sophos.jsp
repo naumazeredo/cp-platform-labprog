@@ -21,10 +21,9 @@
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid" id="menu">
           <div class="navbar-header">
-            <div class="navbar-brand" href="/sophos" id="menu-brand">
-              <a href="/sophos"><span class="fa fa-code fa-lg"></span> Sophos</a>
-              <span id="menu-toggle" class="pull-right fa fa-angle-double-down" data-toggle="toggle" data-target="#wrapper"></span>
-            </div>
+            <a class="navbar-brand" href="/sophos" id="menu-brand">
+              <span class="fa fa-code fa-lg"></span> Sophos
+            </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
@@ -58,6 +57,9 @@
           <li><a href="#">Categories</a></li>
           <li><a href="#">Articles</a></li>
         </ul>
+      </div>
+      <div id="sidebar-toggle" data-toggle="toggle" data-target="#wrapper">
+        <span class="fa fa-arrow-circle-left fa-lg"></span>
       </div>
 
       <!-- Main Content -->

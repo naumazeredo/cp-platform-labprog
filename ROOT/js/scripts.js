@@ -56,3 +56,15 @@ function createtoc() {
 $('[data-toggle="toggle"').on('click', function() {
     $($(this).data('target')).toggleClass('toggled');
 });
+
+// Hides menu if clicking outside and screen is small
+$('html').on('click', function() {
+    if ($(window).width() < 768) { // Small window
+        $('#wrapper').removeClass("toggled");
+        console.log("hide");
+    }
+});
+
+$('#sidebar-wrapper, #sidebar-toggle').on('click', function(e) {
+    e.stopPropagation();
+});
