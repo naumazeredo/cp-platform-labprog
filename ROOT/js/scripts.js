@@ -8,13 +8,32 @@ anchors.options.placement = 'left';
 /* Article scripts */
 /*******************/
 
+/* Render markdown text */
+function rendermarkdown(title, content) {
+    var title = '# ' + decodeURI(title.replace(/%5C/g, '%5C%5C')); // POG: to use the string in another function we have to escape the escape character...
+    var content = decodeURI(content.replace(/%5C/g, '%5C%5C'));
+    marked(title + '\n\n' + content, function(err, content) {
+      $('#article').html(content);
+      postrender();
+      createtoc();
+    });
+}
+
+// TODO(naum): Get H1 elements and separate sections in TOC
 /* Treat markdown rendering ids */
 function postrender() {
     var parent;
+    var sec = 0, sub = 0;
     $('#article h2, #article h3').each(function(index, elem) {
         $(elem).attr('class', 'anchor');
-        if (elem.nodeName === 'H2') parent = elem.id;
-        else $(elem).attr('id', parent+'-'+elem.id);
+        if (elem.nodeName === 'H2') {
+            sec++;
+            sub = 0;
+            $(elem).attr('id', "sec-"+sec);
+        } else {
+            sub++;
+            $(elem).attr('id', "sec-"+sec+"-"+sub);
+        }
     });
     anchors.add('.anchor');
 }
@@ -35,15 +54,17 @@ function createtoc() {
             }
 
             h2elem = $('<li/>');
-            h2elem.append($('<a/>', { 'href': '#'+elem.id, 'text': $(elem).text() }));
+            h2elem.append($('<a/>', { 'href': '#'+$(elem).attr('id'), 'text': $(elem).text() }));
             h3elem = $('<ul/>', {'class': 'nav'});
         } else {
-            h3elem.append($('<li/>').append($('<a/>', { 'href': '#'+elem.id, 'text': $(elem).text() })));
+            h3elem.append($('<li/>').append($('<a/>', { 'href': '#'+$(elem).attr('id'), 'text': $(elem).text() })));
         }
     });
 
-    if (h3elem) h2elem.append(h3elem);
-    toc.append(h2elem);
+    if (h2elem) {
+        if (h3elem.text()) h2elem.append(h3elem);
+        toc.append(h2elem);
+    }
 
     $('body').scrollspy({ target: '#toc-sidebar' });
 }
