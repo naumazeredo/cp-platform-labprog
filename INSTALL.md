@@ -6,7 +6,7 @@ and extract to wherever you like (way too simple).
 
 # Database - MySQL
 
-MySQL access should be `root` with empty password. If you need to use other
+MySQL access should be `root` with password `123456`. If you need to use other
 credentials alter _FabricaConexoes.java_.
 
 Create a database named **sophos** and import _sophos.sql_ (`mysql -p sophos < sophos.sql`).
@@ -32,10 +32,13 @@ To build Servlet .java files you first need to have an environment variable
 Use `make` (or build by hand) to build all source codes in `src` folder
 to `ROOT/WEB-INF/classes` folder.
 
+If you don't want to set `CLASSPATH`, you can modify `compile.sh` and run using
+`./compile.sh`.
+
 # Contributing
 
-Create/modify the Servlet java source files in `src` folder. Use `make` (or build by hand)
-to build all source codes in `src` folder to `ROOT/WEB-INF/classes` folder.
+Create/modify the Servlet java source files in `src` folder. See `Build` to know
+how to compile the source files.
 
 Create/modify interface files (.html, .jsp, etc) in `ROOT` folder.
 
