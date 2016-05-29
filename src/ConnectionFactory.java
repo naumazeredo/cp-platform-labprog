@@ -7,7 +7,7 @@ public class ConnectionFactory {
   static final String DB_URL = "jdbc:mysql://localhost:3306/sophos";
 
   static final String USER = "root";
-  static final String PASS = "";
+  static final String PASS = "123456";
 
   public Connection getConnection() {
     try {
