@@ -72,15 +72,15 @@ function createtoc() {
 /* Move to top of the page */
 $(document).scroll(function() {
     var y = $(this).scrollTop();
-    if (y > 80) $('#move-top').fadeIn();
-    else $('#move-top').fadeOut();
+    if (y > 80) $('#move-top-wrapper').fadeIn();
+    else $('#move-top-wrapper').fadeOut();
 
     var winBot = y + $(window).height();
     var footerTop = $(document).height() - $('footer').height();
     if (winBot > footerTop) {
-        $('#move-top').css('bottom', winBot - footerTop);
+        $('#move-top-wrapper').css('bottom', winBot - footerTop);
     } else {
-        $('#move-top').css('bottom', 0);
+        $('#move-top-wrapper').css('bottom', 0);
     }
 });
 
