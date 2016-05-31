@@ -15,7 +15,29 @@
       <!-- Main Content -->
       <div id="page-content-wrapper">
         <div class="container-fluid">
-          <div class="col-md-9 col-sm-12" id="article"></div>
+          <form>
+            <div class="col-md-9 col-sm-12" id="article-control">
+              <button type="button" class="btn" id="cancel" onclick="show_article()">Cancel</button>
+              <div class="pull-right">
+                <button type="button" class="btn" id="preview" onclick="show_preview()">Preview</button>
+                <button type="button" class="btn" id="edit" onclick="show_edit()">Edit</button>
+                <button type="button" class="btn" id="save">Save</button>
+              </div>
+            </div>
+            <div class="col-md-9 col-sm-12" id="article"></div>
+
+            <div class="col-md-9 col-sm-12" id="edit-article">
+              <span>Title</span>
+              <input type="text" name="title" placeholder="Title" id="title">
+
+              <span>Content</span>
+              <textarea name="content" placeholder="Content" id="content"></textarea>
+
+              <span>References</span>
+              <input type="text" name="references" id="references">
+            </div>
+          </form>
+
           <!-- Table of Contents -->
           <div class="col-md-3 hidden-sm hidden-xs"><nav id="toc-sidebar"></nav></div>
         </div>
@@ -32,7 +54,10 @@
     <script src="/vendor/marked.min.js"></script>
 
     <script>
-      rendermarkdown('<%=request.getAttribute("name")%>', '<%=request.getAttribute("content")%>');
+      var title = '<%=request.getAttribute("name")%>';
+      var content = '<%=request.getAttribute("content")%>';
+
+      show_article();
     </script>
 
   </body>

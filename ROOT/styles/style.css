@@ -55,6 +55,8 @@ footer > div {
   top: -2px;
 }
 
+/* Move top */
+
 #move-top-wrapper {
   display: none;
   cursor: pointer;
@@ -275,3 +277,28 @@ footer > div {
   font-size: 1.2em;
 }
 
+/****************/
+/* Edit Article */
+/****************/
+
+#edit-article { display: none; margin-top: 12px; }
+
+#edit-article input,
+#edit-article textarea {
+  width: 100%;
+  margin: 4px;
+  padding: 4px;
+
+  border: 1px solid #aaa;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#edit-article input { font-size: 1.5em; }
+#edit-article textarea { min-height: 20em; }
+#edit-article span { margin-left: 6px; margin-top: 6px; color: #aaa; }
+
+#cancel { margin-left: 6px; }
