@@ -30,9 +30,9 @@ implementada nessa interface.
 
 # Backlog
 
-[x] Eu como usuário devo conseguir visualizar a listagem dos artigos da plataforma por categoria, sem autenticação.
-[x] Eu como usuário devo conseguir acessar cada artigo individualmente e visualizar o conteúdo renderizado por Markdown e LaTeX.
-[x] Eu como usuário, devo ser capaz de buscar artigos e problemas por categoria, nome e keywords.
-[ ] Eu como editor devo ser capaz de criar, editar e remover artigos. Devo ser capaz de criar o artigo usando Markdown e LaTex para as fórmulas matemáticas. Além disso, o renderizador deve ser capaz de reconhecer código e fazer a renderização indentada e colorida.
-[ ] Eu como editor devo ser capaz de criar, editar, visualizar e remover categorias de problemas e artigos.
-[ ] Eu como editor devo ser capaz de associar problemas e artigos a keywords. Keywords frequentemente usadas podem ser associadas a uma categoria.
+- [x] Eu como usuário devo conseguir visualizar a listagem dos artigos da plataforma por categoria, sem autenticação.
+- [x] Eu como usuário devo conseguir acessar cada artigo individualmente e visualizar o conteúdo renderizado por Markdown e LaTeX.
+- [x] Eu como usuário, devo ser capaz de buscar artigos e problemas por categoria, nome e keywords.
+- [ ] Eu como editor devo ser capaz de criar, editar e remover artigos. Devo ser capaz de criar o artigo usando Markdown e LaTex para as fórmulas matemáticas. Além disso, o renderizador deve ser capaz de reconhecer código e fazer a renderização indentada e colorida.
+- [ ] Eu como editor devo ser capaz de criar, editar, visualizar e remover categorias de problemas e artigos.
+- [ ] Eu como editor devo ser capaz de associar problemas e artigos a keywords. Keywords frequentemente usadas podem ser associadas a uma categoria.
