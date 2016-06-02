@@ -19,6 +19,6 @@ public class Article {
   public String getContent() { return this.content; }
   public void setContent(String content) { this.content = content; }
 
-  public Category getCategory() {return this.category; }
-  public void setCategory(Category category) {this.category = category; }
+  public Category getCategory() { return this.category; }
+  public void setCategory(Category category) { this.category = category; }
 }

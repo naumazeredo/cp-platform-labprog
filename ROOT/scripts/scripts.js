@@ -149,7 +149,7 @@ function show_preview() {
   MathJax.Hub.Queue(["Typeset",MathJax.Hub,'#article'])();
 
   // Buttons
-  $('#cancel').hide();
+  $('#cancel').show();
   $('#preview').hide();
   $('#edit').show();
   $('#save').show();

@@ -57,6 +57,24 @@ public class CategoryDAO {
     }
   }
 
+  public Category getById(int id) {
+    try (PreparedStatement stmt = connec.prepareStatement("select id,name from category where id=?")) {
+      stmt.setInt(1, id);
+
+      ResultSet rs = stmt.executeQuery();
+      if (rs.next()) {
+        Category a = new Category();
+        a.setId(rs.getInt("id"));
+        a.setName(rs.getString("name"));
+        return a;
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+
+    return null;
+  }
+
   public List<Category> getList() {
     List<Category> list = new ArrayList<>();
 

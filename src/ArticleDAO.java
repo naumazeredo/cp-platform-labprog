@@ -18,12 +18,11 @@ public class ArticleDAO {
   }
 
   public void insert(Article article){
-    String cmd = "insert into article (id, name, id_category, name_category, content) values (?, ?, ?, ?, ?)";
+    String cmd = "insert into article (id, name, category_id, content) values (?, ?, ?, ?, ?)";
     try (PreparedStatement stmt = connec.prepareStatement(cmd, Statement.RETURN_GENERATED_KEYS)){
       stmt.setInt(1, article.getId());
       stmt.setString(2, article.getName());
       stmt.setInt(3, article.getCategory().getId());
-      stmt.setString(4, article.getCategory().getName());
       stmt.setString(5, article.getContent());
       stmt.executeUpdate();
       ResultSet generatedKeys = stmt.getGeneratedKeys();
@@ -64,7 +63,7 @@ public class ArticleDAO {
   }
 
   public Article getById(int id) {
-    try (PreparedStatement stmt = connec.prepareStatement("select id,name,content from article where id=?")) {
+    try (PreparedStatement stmt = connec.prepareStatement("select id,name,content,category_id from article where id=?")) {
       stmt.setInt(1, id);
 
       ResultSet rs = stmt.executeQuery();
@@ -73,6 +72,7 @@ public class ArticleDAO {
         a.setId(rs.getInt("id"));
         a.setName(rs.getString("name"));
         a.setContent(rs.getString("content"));
+        a.setCategory((new CategoryDAO()).getById(rs.getInt("category_id")));
         return a;
       }
     } catch (SQLException e) {

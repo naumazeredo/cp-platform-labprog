@@ -1,4 +1,8 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList,sophos.Article,sophos.Category" %>
+
+<% Article article = (Article)request.getAttribute("article"); %>
+<% ArrayList<Category> categories = (ArrayList<Category>)request.getAttribute("categories"); %>
+
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -26,15 +30,19 @@
             </div>
             <div class="col-md-9 col-sm-12" id="article"></div>
 
-            <div class="col-md-9 col-sm-12" id="edit-article">
-              <span>Title</span>
-              <input type="text" name="title" placeholder="Title" id="title">
+            <div class="col-md-9 col-sm-12 form-group" id="edit-article">
+              <label for="title">Title</label>
+              <input type="text" name="title" placeholder="Title" id="title" class="form-control">
 
-              <span>Content</span>
-              <textarea name="content" placeholder="Content" id="content"></textarea>
+              <label for="content">Content</label>
+              <textarea name="content" placeholder="Content" id="content" class="form-control"></textarea>
 
-              <span>References</span>
-              <input type="text" name="references" id="references">
+              <label for="categories">Category</label>
+              <select class="form-control" id="categories">
+                <% for (int i = 0; i < categories.size(); i++) { %>
+                <option value="<%= categories.get(i).getId() %>" <% if (article.getCategory().getId() == categories.get(i).getId()) { %>selected<% } %>><%= categories.get(i).getName() %></option>
+                <% } %>
+              </select>
             </div>
           </form>
 
@@ -54,8 +62,8 @@
     <script src="/vendor/marked.min.js"></script>
 
     <script>
-      var title = '<%=request.getAttribute("name")%>';
-      var content = '<%=request.getAttribute("content")%>';
+      var title = '<%= article.getName() %>';
+      var content = '<%= article.getContent() %>';
 
       show_article();
     </script>
