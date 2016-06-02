@@ -125,6 +125,12 @@ $('textarea').each(function () {
   this.style.height = (this.scrollHeight) + 'px';
 });
 
+function textarea_auto_height() {
+  $('textarea').each(function () {
+    this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+  });
+}
+
 function show_article() {
   $('#edit-article').hide();
   $('#article').show();
@@ -165,4 +171,6 @@ function show_edit() {
   $('#preview').show();
   $('#edit').hide();
   $('#save').show();
+
+  textarea_auto_height();
 }
