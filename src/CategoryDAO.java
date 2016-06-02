@@ -51,7 +51,7 @@ public class CategoryDAO {
 
       stmt.executeUpdate();
       category.setId(0);
-    } 
+    }
     catch (SQLException e) {
       throw new RuntimeException(e);
     }

@@ -144,8 +144,8 @@ function show_article() {
   $('#save').hide();
 
   // Reset edit
-  $('#title').val(decodeURIComponent(title.replace(/\+/g, '%20')));
-  $('#content').val(decodeURIComponent(content.replace(/\+/g, '%20')));
+  $('#title').val(decodeURIComponent(title));
+  $('#content').val(decodeURIComponent(content));
 }
 
 function show_preview() {
@@ -174,3 +174,4 @@ function show_edit() {
 
   textarea_auto_height();
 }
+

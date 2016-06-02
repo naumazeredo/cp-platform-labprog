@@ -44,8 +44,8 @@ public class ServletArticle extends HttpServlet {
     CategoryDAO categoryDAO = new CategoryDAO();
 
     Article article = articleDAO.getById(articleId);
-    article.setName(URLEncoder.encode(request.getParameter("title"), "UTF-8"));
-    article.setContent(URLEncoder.encode(request.getParameter("content"), "UTF-8"));
+    article.setName(request.getParameter("title"));
+    article.setContent(request.getParameter("content"));
     article.setCategory(categoryDAO.getById(Integer.parseInt(request.getParameter("category"))));
 
     articleDAO.update(article);

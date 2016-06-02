@@ -19,7 +19,7 @@
       <!-- Main Content -->
       <div id="page-content-wrapper">
         <div class="container-fluid">
-          <form action="/sophos/article/<%= article.getId() %>" method="POST">
+          <form action="/sophos/article/<%= article.getId() %>" method="POST" id="article-form">
             <div class="col-md-9 col-sm-12" id="article-control">
               <button type="button" class="btn" id="cancel" onclick="show_article()">Cancel</button>
               <div class="pull-right">
@@ -62,10 +62,16 @@
     <script src="/vendor/marked.min.js"></script>
 
     <script>
-      var title = '<%= article.getName() %>'.replace(/\+/g, '%20');
-      var content = '<%= article.getContent() %>'.replace(/\+/g, '%20');
+      var title = '<%= article.getName() %>';
+      var content = '<%= article.getContent() %>';
 
       show_article();
+
+      $('#article-form').submit(function() {
+        $('#title').val(encodeURI($('#title').val()));
+        $('#content').val(encodeURI($('#content').val()));
+        return true;
+      });
     </script>
 
   </body>

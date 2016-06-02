@@ -21,38 +21,6 @@ public class ServletHome extends HttpServlet {
         request.setAttribute("search", search);
     }
 
-    /*
-    List<String> categories = new ArrayList<String>();
-    List<List<String>> articles = new ArrayList<List<String>>();
-    List<List<int>> ids = new ArrayList<List<int>>();
-
-    // Get all categories
-    List<Category> categoryList = (new CategoryDAO()).getList();
-    for (int i = 0; i < categoryList.size(); i++) {
-      // Get the list of all articles for the category
-      List<Article> articleList = (new ArticleDAO()).getListFromCategory(categoryList.get(i));
-      if (articleList.size() > 0) {
-        List<String> nameBuffer = new ArrayList<String>();
-        List<int> idBuffer = new ArrayList<int>();
-        for (int j = 0; j < articleList.size(); j++) {
-          String articleName = articleList.get(j).getName();
-          // If not searching or article name contains the search string, add to the list
-          if (search.length() == 0 || articleName.toLowerCase().contains(search.toLowerCase())) {
-            nameBuffer.add(articleList.get(j).getName());
-            idBuffer.add(articleList.get(j).getId());
-          }
-        }
-
-        // Only add the category if the is some article in it
-        if (nameBuffer.size() > 0) {
-          categories.add(categoryList.get(i).getName());
-          articles.add(nameBuffer);
-          ids.add(idBuffer);
-        }
-      }
-    }
-    */
-
     List<Category> categories = new ArrayList<Category>();
     List<List<Article>> articles = new ArrayList<List<Article>>();
 

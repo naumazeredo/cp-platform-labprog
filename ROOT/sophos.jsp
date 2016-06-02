@@ -47,8 +47,9 @@
                 <% } %>
 
           </div>
-          <div class="col-sm-12">
+          <div class="col-sm-12" id="control-buttons">
             <a href="/sophos/new-article"><button type="button" id="new-article" class="btn btn-primary">Create Article</button></a>
+            <a href="/sophos/edit-categories"><button type="button" id="edit-categories" class="btn btn-primary">Edit Categories</button></a>
           </div>
         </div>
       </div>

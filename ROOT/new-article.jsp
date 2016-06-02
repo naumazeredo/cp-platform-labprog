@@ -18,7 +18,7 @@
       <!-- Main Content -->
       <div id="page-content-wrapper">
         <div class="container-fluid">
-          <form action="/sophos/new-article" method="POST">
+          <form action="/sophos/new-article" method="POST" id="article-form">
             <div class="col-md-9 col-sm-12" id="article-control">
               <div class="pull-right">
                 <button type="button" class="btn" id="preview" onclick="show_preview()">Preview</button>
@@ -61,6 +61,12 @@
 
     <script>
       show_edit();
+
+      $('#article-form').submit(function() {
+        $('#title').val(encodeURI($('#title').val()));
+        $('#content').val(encodeURI($('#content').val()));
+        return true;
+      });
     </script>
 
   </body>
