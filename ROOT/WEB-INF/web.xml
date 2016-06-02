@@ -37,6 +37,11 @@
     <servlet-class>ServletArticle</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>Sophos New Article</servlet-name>
+    <servlet-class>ServletNewArticle</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>Sophos Index</servlet-name>
     <url-pattern>/sophos</url-pattern>
@@ -45,6 +50,12 @@
   <servlet-mapping>
     <servlet-name>Sophos Article</servlet-name>
     <url-pattern>/sophos/article/*</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Sophos New Article</servlet-name>
+    <url-pattern>/sophos/new-article</url-pattern>
   </servlet-mapping>
 
   <!--==================-->

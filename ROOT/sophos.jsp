@@ -18,17 +18,17 @@
           <div class="page-header">
             <% String searchString = (String)request.getAttribute("search"); %>
             <% if (searchString != null) { %>
-              <h1>Search: <small> <%= searchString %></small></h1>
+            <h1>Search: <small> <%= searchString %></small></h1>
             <% } else { %>
-              <h1>printf("Welcome\n") <small>// coding wiki</small></h1>
+            <h1>printf("Welcome\n") <small>// coding wiki</small></h1>
             <% } %>
           </div>
           <div class="col-sm-12">
 
             <% ArrayList<Category> categories = (ArrayList<Category>)request.getAttribute("categories"); %>
             <% ArrayList<ArrayList<Article>> articles = (ArrayList<ArrayList<Article>>)request.getAttribute("articles"); %>
-            <% if (categories.size() > 0) { %>
-              <% for (int i = 0; i < categories.size(); i++) { %>
+                <% if (categories.size() > 0) { %>
+                <% for (int i = 0; i < categories.size(); i++) { %>
                 <div class="col-sm-6 col-md-4">
                   <ul class="list-unstyled category-list">
                     <li>
@@ -37,23 +37,26 @@
                         <% for (int j = 0; j < articles.get(i).size(); j++) { %>
                         <li><a href="sophos/article/<%=articles.get(i).get(j).getId()%>"><%= URLDecoder.decode(articles.get(i).get(j).getName(), "UTF-8") %></a></li>
                         <% } %>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <% } %>
-            <% } else { %>
-            <p><abbr title="'<%=searchString%>' not found... Sorry...">Here lies the search hopes!</abbr> :'(</p>
-            <% } %>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <% } %>
+                <% } else { %>
+                <p><abbr title="'<%=searchString%>' not found... Sorry...">Here lies the search hopes!</abbr> :'(</p>
+                <% } %>
 
+          </div>
+          <div class="col-sm-12">
+            <a href="/sophos/new-article"><button type="button" id="new-article" class="btn btn-primary">Create Article</button></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Page footer -->
-    <%@ include file="/common/footer.html" %>
+      <!-- Page footer -->
+      <%@ include file="/common/footer.html" %>
 
-    <!-- Scripts -->
-    <%@ include file="/common/scripts.html" %>
+      <!-- Scripts -->
+      <%@ include file="/common/scripts.html" %>
   </body>
 </html>

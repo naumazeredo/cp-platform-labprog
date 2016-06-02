@@ -303,3 +303,9 @@ footer > div {
 #edit-article span { margin-left: 6px; margin-top: 6px; color: #aaa; }
 
 #cancel { margin-left: 6px; }
+
+/***************/
+/* New Article */
+/***************/
+
+#new-article { padding: 12px 20px; margin: 20px; }

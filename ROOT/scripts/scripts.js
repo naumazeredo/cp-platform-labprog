@@ -10,7 +10,7 @@ anchors.options.placement = 'left';
 
 /* Render markdown text */
 function rendermarkdown(title, content) {
-  var title = '# ' + decodeURIComponent(title.replace(/%5C/g, '%5C%5C')); // POG: to use the string in another function we have to escape the escape character...
+  var title = '# ' + (title === '' ? "Article title" : decodeURIComponent(title.replace(/%5C/g, '%5C%5C'))); // POG: to use the string in another function we have to escape the escape character...
   var content = decodeURIComponent(content.replace(/%5C/g, '%5C%5C'));
   marked(title + '\n\n' + content, function(err, content) {
     $('#article').html(content);

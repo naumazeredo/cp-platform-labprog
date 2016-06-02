@@ -18,12 +18,12 @@ public class ArticleDAO {
   }
 
   public void insert(Article article){
-    String cmd = "insert into article (id, name, category_id, content) values (?, ?, ?, ?, ?)";
+    String cmd = "insert into article (id, name, category_id, content) values (?, ?, ?, ?)";
     try (PreparedStatement stmt = connec.prepareStatement(cmd, Statement.RETURN_GENERATED_KEYS)){
       stmt.setInt(1, article.getId());
       stmt.setString(2, article.getName());
       stmt.setInt(3, article.getCategory().getId());
-      stmt.setString(5, article.getContent());
+      stmt.setString(4, article.getContent());
       stmt.executeUpdate();
       ResultSet generatedKeys = stmt.getGeneratedKeys();
       if (generatedKeys.next())
