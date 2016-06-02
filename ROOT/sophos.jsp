@@ -32,10 +32,10 @@
                 <div class="col-sm-6 col-md-4">
                   <ul class="list-unstyled category-list">
                     <li>
-                      <span><%= URLDecoder.decode(categories.get(i).getName()) %></span>
+                      <span><%= URLDecoder.decode(categories.get(i).getName(), "UTF-8") %></span>
                       <ul>
                         <% for (int j = 0; j < articles.get(i).size(); j++) { %>
-                        <li><a href="sophos/article/<%=articles.get(i).get(j).getId()%>"><%= URLDecoder.decode(articles.get(i).get(j).getName()) %></a></li>
+                        <li><a href="sophos/article/<%=articles.get(i).get(j).getId()%>"><%= URLDecoder.decode(articles.get(i).get(j).getName(), "UTF-8") %></a></li>
                         <% } %>
                     </ul>
                   </li>

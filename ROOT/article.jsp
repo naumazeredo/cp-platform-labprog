@@ -19,13 +19,13 @@
       <!-- Main Content -->
       <div id="page-content-wrapper">
         <div class="container-fluid">
-          <form>
+          <form action="/sophos/article/<%= article.getId() %>" method="POST">
             <div class="col-md-9 col-sm-12" id="article-control">
               <button type="button" class="btn" id="cancel" onclick="show_article()">Cancel</button>
               <div class="pull-right">
                 <button type="button" class="btn" id="preview" onclick="show_preview()">Preview</button>
                 <button type="button" class="btn" id="edit" onclick="show_edit()">Edit</button>
-                <button type="button" class="btn" id="save">Save</button>
+                <button type="submit" class="btn" id="save">Save</button>
               </div>
             </div>
             <div class="col-md-9 col-sm-12" id="article"></div>
@@ -37,8 +37,8 @@
               <label for="content">Content</label>
               <textarea name="content" placeholder="Content" id="content" class="form-control"></textarea>
 
-              <label for="categories">Category</label>
-              <select class="form-control" id="categories">
+              <label for="category">Category</label>
+              <select class="form-control" id="category" name="category">
                 <% for (int i = 0; i < categories.size(); i++) { %>
                 <option value="<%= categories.get(i).getId() %>" <% if (article.getCategory().getId() == categories.get(i).getId()) { %>selected<% } %>><%= categories.get(i).getName() %></option>
                 <% } %>
@@ -62,8 +62,8 @@
     <script src="/vendor/marked.min.js"></script>
 
     <script>
-      var title = '<%= article.getName() %>';
-      var content = '<%= article.getContent() %>';
+      var title = '<%= article.getName() %>'.replace(/\+/g, '%20');
+      var content = '<%= article.getContent() %>'.replace(/\+/g, '%20');
 
       show_article();
     </script>

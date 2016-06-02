@@ -10,8 +10,8 @@ anchors.options.placement = 'left';
 
 /* Render markdown text */
 function rendermarkdown(title, content) {
-  var title = '# ' + decodeURI(title.replace(/%5C/g, '%5C%5C')); // POG: to use the string in another function we have to escape the escape character...
-  var content = decodeURI(content.replace(/%5C/g, '%5C%5C'));
+  var title = '# ' + decodeURIComponent(title.replace(/%5C/g, '%5C%5C')); // POG: to use the string in another function we have to escape the escape character...
+  var content = decodeURIComponent(content.replace(/%5C/g, '%5C%5C'));
   marked(title + '\n\n' + content, function(err, content) {
     $('#article').html(content);
     postrender();
@@ -138,8 +138,8 @@ function show_article() {
   $('#save').hide();
 
   // Reset edit
-  $('#title').val(decodeURI(title));
-  $('#content').val(decodeURI(content));
+  $('#title').val(decodeURIComponent(title.replace(/\+/g, '%20')));
+  $('#content').val(decodeURIComponent(content.replace(/\+/g, '%20')));
 }
 
 function show_preview() {

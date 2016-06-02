@@ -35,13 +35,12 @@ public class ArticleDAO {
   }
 
   public void update(Article article){
-    String cmd = "update article set id=?, name=?, category.id=?, category.name=?, content=?";
+    String cmd = "update article set name=?, content=?, category_id=? where id=?";
     try (PreparedStatement stmt = connec.prepareStatement(cmd)){
-      stmt.setInt(1, article.getId());
-      stmt.setString(2, article.getName());
+      stmt.setString(1, article.getName());
+      stmt.setString(2, article.getContent());
       stmt.setInt(3, article.getCategory().getId());
-      stmt.setString(4, article.getCategory().getName());
-      stmt.setString(5, article.getContent());
+      stmt.setInt(4, article.getId());
       stmt.executeUpdate();
     }
     catch(SQLException e){
