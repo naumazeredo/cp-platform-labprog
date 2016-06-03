@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList,java.net.URLDecoder,sophos.Article,sophos.Category" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList,java.net.URLDecoder,sophos.Article,sophos.Category,sophos.Problem" %>
 <!DOCTYPE html>
 <html lang="pt">
   <head>

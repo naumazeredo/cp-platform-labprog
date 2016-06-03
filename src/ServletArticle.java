@@ -18,6 +18,7 @@ public class ServletArticle extends HttpServlet {
 
     Article article = (new ArticleDAO()).getById(articleId);
     List<Category> categories = (new CategoryDAO()).getList();
+    List<Problem> problems = (new ProblemDAO()).getList(article);
 
     if (article == null) {
       // TODO(naum): Redirect to error page
@@ -26,6 +27,7 @@ public class ServletArticle extends HttpServlet {
 
     request.setAttribute("article", article);
     request.setAttribute("categories", categories);
+    request.setAttribute("problems", problems);
 
     ServletContext app = this.getServletContext();
     RequestDispatcher rd = app.getRequestDispatcher("/article.jsp");
@@ -51,9 +53,11 @@ public class ServletArticle extends HttpServlet {
     articleDAO.update(article);
 
     List<Category> categories = categoryDAO.getList();
+    List<Problem> problems = (new ProblemDAO()).getList(article);
 
     request.setAttribute("article", article);
     request.setAttribute("categories", categories);
+    request.setAttribute("problems", problems);
 
     ServletContext app = this.getServletContext();
     RequestDispatcher rd = app.getRequestDispatcher("/article.jsp");

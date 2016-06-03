@@ -137,6 +137,10 @@ function show_article() {
   rendermarkdown(title, content);
   MathJax.Hub.Queue(["Typeset",MathJax.Hub,'#article'])();
 
+  //Problems
+  var problems = $('#problems .modal-body');
+  problems.html(marked(problems.html().trim()));
+
   // Buttons
   $('#cancel').hide();
   $('#preview').hide();
